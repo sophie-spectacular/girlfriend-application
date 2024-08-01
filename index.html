@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Girlfriend Application</title>
+    <style>
+        body { font-family: 'Comic Sans MS', cursive, sans-serif; background-color: #f0f8ff; text-align: center; padding: 50px; }
+        .container { max-width: 600px; margin: 0 auto; background: #fff; padding: 20px; border-radius: 10px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); }
+        h1 { color: #ff69b4; }
+        input, textarea { width: 100%; padding: 10px; margin: 10px 0; border-radius: 5px; border: 1px solid #ccc; }
+        button { background-color: #ff69b4; color: #fff; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; }
+        button:hover { background-color: #ff1493; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>National Girlfriend Day Application</h1>
+        <form id="applicationForm">
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="number" name="age" placeholder="Your Age (be honest)" required>
+            <input type="text" name="hobby" placeholder="Binge-watching Netflix" required>
+            <input type="text" name="movie" placeholder="Favorite Movie/TV Show" required>
+            <input type="text" name="quality" placeholder="Best Quality (brag a little)" required>
+            <textarea name="date" placeholder="A moonlit stroll to the fridge" required></textarea>
+            <input type="text" name="food" placeholder="Favorite Food" required>
+            <input type="text" name="pets" placeholder="Do you like pets? (Yes/No)" required>
+            <textarea name="fact" placeholder="Fun Fact About Yourself" required></textarea>
+            <textarea name="reason" placeholder="Why Should I Pick You?" required></textarea>
+            <button type="submit">Submit</button>
+        </form>
+        <div id="response" style="margin-top: 20px;"></div>
+    </div>
+    <script>
+        document.getElementById('applicationForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const formData = new FormData(event.target);
+            const responseDiv = document.getElementById('response');
+            responseDiv.innerHTML = "<h2>Application Received!</h2>";
+            formData.forEach((value, key) => {
+                responseDiv.innerHTML += `<p><strong>${key}:</strong> ${value}</p>`;
+            });
+        });
+    </script>
+</body>
+</html>
