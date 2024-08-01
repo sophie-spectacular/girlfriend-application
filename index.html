@@ -3,22 +3,79 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Girlfriend Application</title>
+    <title>National Girlfriend Day Application</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f7f7f7;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+        .container {
+            max-width: 600px;
+            margin: 2rem auto;
+            padding: 1rem;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #ff4081;
+        }
+        label {
+            display: block;
+            margin: 0.5rem 0;
+            font-weight: bold;
+        }
+        input, textarea {
+            width: 100%;
+            padding: 0.5rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+        button {
+            background-color: #ff4081;
+            color: #fff;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+        button:hover {
+            background-color: #e7356c;
+        }
+        .message {
+            margin-top: 1rem;
+            font-weight: bold;
+        }
+    </style>
 </head>
 <body>
-    <h1>Girlfriend Application</h1>
-    <form id="applicationForm">
-        <label for="name">Name:</label>
-        <input type="text" id="name" name="name" required><br><br>
-        
-        <label for="age">Age:</label>
-        <input type="number" id="age" name="age" required><br><br>
-        
-        <label for="interests">Interests:</label>
-        <textarea id="interests" name="interests" required></textarea><br><br>
-        
-        <button type="submit">Submit</button>
-    </form>
+    <div class="container">
+        <h1>Happy National Girlfriend Day!</h1>
+        <p>Apply now to become the girlfriend of your dreams!</p>
+        <form id="applicationForm">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required><br><br>
+            
+            <label for="age">Age:</label>
+            <input type="number" id="age" name="age" required><br><br>
+            
+            <label for="interests">Interests:</label>
+            <textarea id="interests" name="interests" required></textarea><br><br>
+            
+            <button type="submit">Submit Application</button>
+        </form>
+        <div id="message" class="message"></div>
+    </div>
     <script>
         document.getElementById('applicationForm').addEventListener('submit', function(event) {
             event.preventDefault(); // Prevent the default form submission
@@ -36,11 +93,16 @@
                 body: JSON.stringify(data)
             }).then(response => response.json())
               .then(result => {
-                alert('Application submitted successfully!');
+                document.getElementById('message').textContent = 'Application submitted successfully! 🎉';
+                document.getElementById('message').style.color = '#28a745'; // Green color
               }).catch(error => {
-                alert('There was an error submitting your application.');
+                document.getElementById('message').textContent = 'There was an error submitting your application. 😔';
+                document.getElementById('message').style.color = '#dc3545'; // Red color
               });
         });
     </script>
 </body>
 </html>
+
+
+/*https://formspree.io/f/myzgwdzz*/
