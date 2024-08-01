@@ -1,0 +1,137 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #fce4ec;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+.container {
+    max-width: 600px;
+    margin: 2rem auto;
+    padding: 1.5rem;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    border: 1px solid #ffc1e3;
+}
+
+h1 {
+    color: #ff77a9;
+    font-family: 'Pacifico', cursive;
+    margin-bottom: 1rem;
+}
+
+p {
+    color: #555;
+    margin-bottom: 1.5rem;
+}
+
+label {
+    display: block;
+    margin: 0.5rem 0;
+    font-weight: bold;
+    font-size: 1.1rem;
+    color: #ff77a9;
+}
+
+input[type="text"], input[type="radio"] {
+    font-size: 1rem;
+}
+
+textarea {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #ff77a9;
+    border-radius: 8px;
+    box-sizing: border-box;
+    font-size: 1rem;
+    resize: vertical;
+    min-height: 100px;
+}
+
+button {
+    background-color: #ff77a9;
+    color: #fff;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    font-family: 'Pacifico', cursive;
+}
+
+button:hover {
+    background-color: #ff4081;
+}
+
+.radio-group {
+    display: flex;
+    justify-content: center;
+    margin: 1rem 0;
+}
+
+.radio-group label {
+    margin: 0 1rem;
+    font-size: 1rem;
+    color: #ff77a9;
+}
+
+.radio-group .inline {
+    display: inline-block;
+    margin: 0 0.5rem;
+}
+
+.message {
+    margin-top: 1rem;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+.checkbox-group {
+    display: flex;
+    justify-content: center;
+    margin: 1rem 0;
+}
+
+.checkbox-group label {
+    margin: 0 1rem;
+    font-size: 1rem;
+    color: #ff77a9;
+    display: flex;
+    align-items: center;
+}
+
+.checkbox-group input[type="radio"] {
+    display: none;
+}
+
+.checkbox-group input[type="radio"] + span {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 2px solid #ff77a9;
+    background: #fff;
+    margin-right: 0.5rem;
+    position: relative;
+    vertical-align: middle;
+}
+
+.checkbox-group input[type="radio"]:checked + span {
+    background: #ff77a9;
+    border-color: #ff77a9;
+}
+
+.checkbox-group input[type="radio"]:checked + span::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 10px;
+    height: 10px;
+    background: #fff;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+}
